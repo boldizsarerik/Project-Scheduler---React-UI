@@ -32,6 +32,17 @@
     "@babel/runtime" "^7.0.0"
     prop-types "^15.5.10"
 
+"@atlaskit/avatar-group@^5.1.1":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@atlaskit/avatar-group/-/avatar-group-5.1.1.tgz#7ac06134e396c6b3840e57500e57784ded297dca"
+  integrity sha512-DqVP/1reT/Jr5bGJIQYnp99XMqOhyRYMiL0O6MFfVWW1raUn572oqRWQo1LEzj6Blm+3p3XPzzf/dthXQCLnwQ==
+  dependencies:
+    "@atlaskit/avatar" "^17.1.9"
+    "@atlaskit/dropdown-menu" "^9.0.2"
+    "@atlaskit/item" "^11.0.2"
+    "@atlaskit/theme" "^9.5.1"
+    tslib "^1.9.3"
+
 "@atlaskit/avatar@^14.0.9":
   version "14.0.9"
   resolved "https://registry.yarnpkg.com/@atlaskit/avatar/-/avatar-14.0.9.tgz#adfb340052fe5cdddcf19056d65a6fbc2c1891f9"
@@ -40,7 +51,7 @@
     "@atlaskit/theme" "^6.0.1"
     "@atlaskit/tooltip" "^12.0.10"
 
-"@atlaskit/avatar@^17.1.7":
+"@atlaskit/avatar@^17.1.7", "@atlaskit/avatar@^17.1.9":
   version "17.1.9"
   resolved "https://registry.yarnpkg.com/@atlaskit/avatar/-/avatar-17.1.9.tgz#cf452ce32040977a355246b2eb39f58572feac03"
   integrity sha512-DZM9OVNn1XHPqx+1JaOr99dBPPMkXwlB1eyC6NkJnFuW3jdN7JoqWu9xT/eiyjcm9GV1hGUUmQ15nGfy7uhkSQ==
@@ -169,6 +180,38 @@
     prop-types "^15.5.10"
     uuid "^3.1.0"
 
+"@atlaskit/dropdown-menu@^9.0.2":
+  version "9.0.2"
+  resolved "https://registry.yarnpkg.com/@atlaskit/dropdown-menu/-/dropdown-menu-9.0.2.tgz#d9c9b017a677aef78d7d76e501b3662fbe144eb7"
+  integrity sha512-uC6GqMofwn5MsjfYLdG44w/+EGKYzLGX1Sywt7uJsY6fLp0WUBJjEQFz5/Rmqi0ok7kAyG9vwk0TkzmLTsWCaw==
+  dependencies:
+    "@atlaskit/analytics-next" "^6.3.5"
+    "@atlaskit/button" "^13.3.9"
+    "@atlaskit/droplist" "^10.0.3"
+    "@atlaskit/icon" "^20.1.0"
+    "@atlaskit/item" "^11.0.2"
+    "@atlaskit/theme" "^9.5.1"
+    "@babel/runtime" "^7.0.0"
+    array-find "^1.0.0"
+    prop-types "^15.5.10"
+    react-uid "^2.2.0"
+    tslib "^1.9.3"
+
+"@atlaskit/droplist@^10.0.3":
+  version "10.0.3"
+  resolved "https://registry.yarnpkg.com/@atlaskit/droplist/-/droplist-10.0.3.tgz#957696686a554ecd1b7aab584645335e45735f42"
+  integrity sha512-qoE7yCLZ+JEEWePlg8z0F/0vkPhWgv8AA3W0/TmydeMtcfKvyZDeM1ujISJDWjT9Luwv3kNbjvjPRcPufFVaqA==
+  dependencies:
+    "@atlaskit/analytics-next" "^6.3.5"
+    "@atlaskit/icon" "^20.1.0"
+    "@atlaskit/item" "^11.0.2"
+    "@atlaskit/layer" "^8.0.1"
+    "@atlaskit/spinner" "^12.1.6"
+    "@atlaskit/theme" "^9.5.1"
+    "@atlaskit/tooltip" "^15.2.5"
+    "@babel/runtime" "^7.0.0"
+    prop-types "^15.5.10"
+
 "@atlaskit/droplist@^7.0.8":
   version "7.0.8"
   resolved "https://registry.yarnpkg.com/@atlaskit/droplist/-/droplist-7.0.8.tgz#c1c5073177fa235fb94bb509782dbbb2b6dafe3e"
@@ -280,7 +323,7 @@
     "@atlaskit/theme" "^6.0.1"
     classnames "^2.2.5"
 
-"@atlaskit/item@^11.0.1":
+"@atlaskit/item@^11.0.1", "@atlaskit/item@^11.0.2":
   version "11.0.2"
   resolved "https://registry.yarnpkg.com/@atlaskit/item/-/item-11.0.2.tgz#6f870fd8e45cb8670efb3e9aeb62cf7d8dd12d62"
   integrity sha512-kiUss92IPx+7KThpcCtNrNAZakWZzVKI2Js8FbtMby5thqDSXARR79eGZYhc3ANybX+xkXoW2A3O24MuRUkl6w==
@@ -315,6 +358,16 @@
   dependencies:
     raf-schd "^2.1.0"
     react-scrolllock "^3.0.1"
+
+"@atlaskit/layer@^8.0.1":
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/@atlaskit/layer/-/layer-8.0.2.tgz#9ae9694646f0f44e739354c8818bb4fa3bef6583"
+  integrity sha512-zj4tuNmrC/Xl0+FmLoZZGHUIi0oWotPgZIG9N9ldjy1BvExD7IyXD6T+bR9zCx2CymCUO6+ASNteFNiY8PvatQ==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    popper.js "^1.14.1"
+    raf-schd "^2.1.0"
+    react-scrolllock "^5.0.1"
 
 "@atlaskit/locale@^1.0.5", "@atlaskit/locale@^1.0.6":
   version "1.0.6"
@@ -375,9 +428,12 @@
     "@atlaskit/theme" "^9.5.1"
     tslib "^1.9.3"
 
-"@atlaskit/page@^8.0.4":
-  version "8.0.4"
-  resolved "https://registry.yarnpkg.com/@atlaskit/page/-/page-8.0.4.tgz#8869d9a700e952b258ed61b6348030a76dc1a4a2"
+"@atlaskit/page@^11.0.12":
+  version "11.0.12"
+  resolved "https://registry.yarnpkg.com/@atlaskit/page/-/page-11.0.12.tgz#4b8490b3f9b93008d9aa9dd5c900716c17097577"
+  integrity sha512-t/pu7+V4zgnYBouqona+iMhNP2U8bf3uiVitJB/eHxb2L+xqk9NzTrP+b9zh2GZbCqHAtRFCgztmjeI4kmYvfw==
+  dependencies:
+    tslib "^1.9.3"
 
 "@atlaskit/pagination@^12.0.19":
   version "12.0.19"

@@ -6,6 +6,7 @@ const breadcrumbs = (
   <BreadcrumbsStateless onExpand={() => {}}>
     <BreadcrumbsItem text="Projects" key="Projects" />
     <BreadcrumbsItem text="Demo" key="Demo" />
+    <BreadcrumbsItem text="Scheduler" key="Scheduler" />
   </BreadcrumbsStateless>
 );
 

@@ -1,16 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Grid, GridColumn } from '@atlaskit/page';
 import { gridSize } from '@atlaskit/theme';
 
-const Padding = styled.div`
-  padding-bottom: ${gridSize() * 3}px;
+const MYDIV= styled.div`
+  padding-bottom: ${gridSize() * 2}px;
+  margin-right: 50px;
+  margin-left: 50px;
 `;
 
 export default ({ children }) => (
-  <Grid>
-
-      <Padding>{children}</Padding>
-
-  </Grid>
+  <MYDIV>{children}</MYDIV>
 )
+

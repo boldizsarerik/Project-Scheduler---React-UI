@@ -1,12 +1,16 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import Button, { ButtonGroup } from '@atlaskit/button';
-import MainSection from '../components/MainSection';
+import Section from '../components/Section';
 import ContentWrapper from '../components/ContentWrapper';
+import Same_line from '../components/Same_line';
 import DynamicTable from '@atlaskit/dynamic-table';
 import Datetime from '../components/Datetime';
 import Checkbox from '../components/Checkbox';
+import Checkbox2 from '../components/Checkbox2';
 import Title from '../components/Title';
+import Avatars from '../components/Avatars';
+import Avatars2 from '../components/Avatars2';
 
 export default class HomePage extends Component 
 {
@@ -21,20 +25,26 @@ export default class HomePage extends Component
   render() 
   {
     return (
-      <ContentWrapper>
+<ContentWrapper>
         <Title></Title>
-        <MainSection/>
+        <Section/>
 
         <ButtonGroup>
           <Button appearance="primary" onClick={this.context.showModal} onClose={() => { }}>+ New Event</Button>
           <Button onClick={this.context.addFlag}>Flag Button</Button>
         </ButtonGroup>
+        <Section/>
 
+      <Same_line>
       <Datetime></Datetime>
       <Checkbox></Checkbox>
+      <Checkbox2></Checkbox2>
+      </Same_line>
+      
+
+      <Section/>
 
         <DynamicTable
-          caption={'Táblázat cim'}
           head={
             {
               cells: [
@@ -52,7 +62,7 @@ export default class HomePage extends Component
                 },
                 {
                   isSortable: false,
-                  key: 'AvParticipants',
+                  key: 'Participants',
                   content: 'Participants ',
                   width: 150
                 },
@@ -85,7 +95,7 @@ export default class HomePage extends Component
                 },
                 {
                   key: '1-3',
-                  content: 'Avatar'
+                  content: <Avatars2></Avatars2>
                 },
                 {
                   key: '1-4',
@@ -282,7 +292,7 @@ export default class HomePage extends Component
           onSetPage={() => console.log('onSetPage')}
         />
 
-      </ContentWrapper>
+</ContentWrapper>
     );
   }
 }

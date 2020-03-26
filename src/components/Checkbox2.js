@@ -27,8 +27,8 @@ export default class ControlledExample extends PureComponent<void, State> {
           isChecked={this.state.isChecked}
           onChange={this.onChange}
           isFullWidth={true}
-          label="Recurring"
-          value="Recurring"
+          label="Not Recurring"
+          value="Not Recurring"
           name="controlled-checkbox"
         />
 

@@ -14,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "@atlaskit/avatar": "^14.0.9",
+    "@atlaskit/avatar-group": "^5.1.1",
     "@atlaskit/breadcrumbs": "^9.2.8",
     "@atlaskit/button": "^9.0.7",
     "@atlaskit/calendar": "^9.2.6",
@@ -27,7 +28,7 @@
     "@atlaskit/inline-edit": "^7.0.7",
     "@atlaskit/modal-dialog": "^6.0.10",
     "@atlaskit/navigation": "^33.1.7",
-    "@atlaskit/page": "^8.0.4",
+    "@atlaskit/page": "^11.0.12",
     "@atlaskit/page-header": "^9.0.18",
     "@atlaskit/quick-search": "^7.8.5",
     "@atlaskit/theme": "^6.0.1",
