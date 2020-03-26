@@ -1,6 +1,5 @@
 import React from 'react';
 import { BreadcrumbsStateless, BreadcrumbsItem } from '@atlaskit/breadcrumbs';
-
 import PageHeader from '@atlaskit/page-header';
 
 const breadcrumbs = (

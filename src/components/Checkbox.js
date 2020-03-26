@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Checkbox } from '@atlaskit/checkbox';
+import { gridSize } from '@atlaskit/theme';
+import { DatePicker, DateTimePicker, TimePicker } from '@atlaskit/datetime-picker';
 
 interface State {
   isChecked: boolean;
@@ -29,7 +31,6 @@ export default class ControlledExample extends PureComponent<void, State> {
           value="Recurring"
           name="controlled-checkbox"
         />
-
         <div
           style={{
             borderStyle: 'dashed',
