@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default () => (
-  <section style={{marginBottom: '20px'}}>
-  <p> TO DO..</p>
+  <section style={{marginBottom: '30px'}}>
   </section>
 );

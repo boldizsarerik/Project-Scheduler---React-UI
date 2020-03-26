@@ -8,43 +8,22 @@ export default class MainRouter extends Component {
   constructor() {
     super();
     this.state = {
-      navOpenState: {
-        isOpen: true,
-        width: 304,
-      }
     }
   }
 
-  getChildContext () {
-    return {
-      navOpenState: this.state.navOpenState,
-    };
-  }
-
-  appWithPersistentNav = () => (props) => (
+  appWithPersistent = () => (props) => (
     <App
-      onNavResize={this.onNavResize}
       {...props}
     />
   )
 
-  onNavResize = (navOpenState) => {
-    this.setState({
-      navOpenState,
-    });
-  }
-
   render() {
     return (
       <Router history={browserHistory}>
-        <Route component={this.appWithPersistentNav()}>
+        <Route component={this.appWithPersistent()}>
           <Route path="/" component={HomePage} />
         </Route>
       </Router>
     );
   }
-}
-
-MainRouter.childContextTypes = {
-  navOpenState: PropTypes.object,
 }

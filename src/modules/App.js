@@ -4,22 +4,11 @@ import Flag, { FlagGroup } from '@atlaskit/flag';
 import Modal from '@atlaskit/modal-dialog';
 import Page from '@atlaskit/page';
 import '@atlaskit/css-reset';
-import Button from '@atlaskit/button';
 
 export default class App extends Component {
   state = {
     flags: [],
     isModalOpen: false,
-  };
-
-  static contextTypes = {
-    navOpenState: PropTypes.object,
-    router: PropTypes.object,
-  };
-
-  static propTypes = {
-    navOpenState: PropTypes.object,
-    onNavResize: PropTypes.func,
   };
 
   static childContextTypes = {
@@ -74,8 +63,8 @@ export default class App extends Component {
           {
             this.state.isModalOpen && (
               <Modal
-                heading="Candy bar"
-                actions={[{ text: 'Exit candy bar', onClick: this.hideModal }]}
+                heading="Popup"
+                actions={[{ text: 'Exit', onClick: this.hideModal }]}
                 onClose={this.hideModal}
               >
                 <p style={{ textAlign: 'center' }}>
