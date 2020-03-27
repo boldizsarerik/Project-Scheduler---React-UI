@@ -1,32 +1,27 @@
 import React from 'react';
-import { AppearanceType, SizeType } from '@atlaskit/avatar';
 import AvatarGroup from '@atlaskit/avatar-group';
-import Avatars from '../components/Avatars';
-import { RANDOM_USERS, getAdorableAvatar } from '../data/av';
+import { RANDOM_USERS, getAdorableAvatar} from '../data/av';
 
 export default () => {
-  const data = RANDOM_USERS.slice(0, 10).map(user => ({
-    ...user,
+  const data = RANDOM_USERS.map(d => ({
+    email: d.email,
+    key: d.email,
+    name: d.name,
     appearance: 'circle',
-    enableTooltip: true,
     size: 'medium',
-    src: getAdorableAvatar(user.email)
+    src: getAdorableAvatar(d.email),
+    enableTooltip: true,
   }));
 
   return (
-
     <div style={{ maxWidth: 270 }}>
-<AvatarGroup
+        <AvatarGroup
+          maxCount= "3"
           appearance="stack"
           onAvatarClick={console.log}
           data={data}
-          size="medium"
+          size="large"
         />
     </div>
   );
 };
-
-
-
-
-
