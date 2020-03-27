@@ -13,34 +13,48 @@
   "author": "Atlassian",
   "license": "ISC",
   "dependencies": {
-    "@atlaskit/avatar": "^14.0.9",
+    "@atlaskit/avatar": "^17.1.9",
     "@atlaskit/avatar-group": "^5.1.1",
     "@atlaskit/breadcrumbs": "^9.2.8",
-    "@atlaskit/button": "^9.0.7",
+    "@atlaskit/button": "^13.3.9",
     "@atlaskit/calendar": "^9.2.6",
     "@atlaskit/checkbox": "^10.1.10",
-    "@atlaskit/css-reset": "^3.0.1",
+    "@atlaskit/css-reset": "^5.0.10",
     "@atlaskit/datetime-picker": "^9.2.9",
-    "@atlaskit/dropdown-menu": "^6.1.10",
+    "@atlaskit/dropdown-menu": "^9.0.2",
     "@atlaskit/dynamic-table": "^13.7.2",
-    "@atlaskit/flag": "^9.0.7",
-    "@atlaskit/icon": "^13.4.0",
-    "@atlaskit/inline-edit": "^7.0.7",
-    "@atlaskit/modal-dialog": "^6.0.10",
-    "@atlaskit/navigation": "^33.1.7",
+    "@atlaskit/flag": "^12.3.10",
+    "@atlaskit/icon": "^20.1.0",
+    "@atlaskit/inline-edit": "^10.0.30",
+    "@atlaskit/modal-dialog": "^10.5.5",
+    "@atlaskit/navigation": "^36.0.4",
     "@atlaskit/page": "^11.0.12",
     "@atlaskit/page-header": "^9.0.18",
     "@atlaskit/quick-search": "^7.8.5",
-    "@atlaskit/theme": "^6.0.1",
-    "prop-types": "^15.6.0",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
-    "react-router": "^3.2.0",
-    "react-router-dom": "^4.2.2",
-    "styled-components": "^3.2.6"
+    "@atlaskit/theme": "^9.5.2",
+    "@version/react-router-v3": "^1.0.0",
+    "history": "^4.10.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router": "^3.2.6",
+    "react-router-dom": "^5.1.2",
+    "styled-components": "^5.0.1"
   },
   "devDependencies": {
-    "react-scripts": "^1.1.1",
-    "surge": "^0.20.1"
+    "react-scripts": "^3.4.1",
+    "surge": "^0.21.3"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
