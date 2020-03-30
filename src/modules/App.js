@@ -4,6 +4,7 @@ import Flag, { FlagGroup } from '@atlaskit/flag';
 import Modal from '@atlaskit/modal-dialog';
 import Page from '@atlaskit/page';
 import '@atlaskit/css-reset';
+import AddNewEvent from '../components/AddNewEvent';
 
 export default class App extends Component {
   state = {
@@ -63,13 +64,13 @@ export default class App extends Component {
           {
             this.state.isModalOpen && (
               <Modal
-                heading="Popup"
-                actions={[{ text: 'Exit', onClick: this.hideModal }]}
+                heading="Create Event"
+                actions={[{ text: 'Cancel', onClick: this.hideModal }]}
                 onClose={this.hideModal}
+                height="800px"
+                width="large"
               >
-                <p style={{ textAlign: 'center' }}>
-                  <img src="http://i.giphy.com/yidUztgRB2w2gtDwL6.gif" alt="Moar cupcakes" />
-                </p>
+                 <AddNewEvent></AddNewEvent>
               </Modal>
             )
           }

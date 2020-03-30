@@ -19,6 +19,7 @@ export default class extends Component<{}, {}> {
           isFixedSize
           defaultSortKey="term"
           defaultSortOrder="ASC"
+          highlightedRowIndex={2}
           onSort={() => console.log('onSort')}
           onSetPage={() => console.log('onSetPage')}
         />

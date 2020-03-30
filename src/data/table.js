@@ -6,6 +6,7 @@ import lorem from './szoveg.json';
 import Button, { ButtonGroup } from '@atlaskit/button';
 import Avatars from '../components/Avatars';
 import AddIcon from '@atlaskit/icon/glyph/editor/add';
+import { format,getHours,getMinutes  } from 'date-fns'
 
 function createKey(input) {
   return input ? input.replace(/^(the|a|an)/, '').replace(/\s/g, '') : input;
@@ -19,12 +20,8 @@ const Wrapper = styled.span`
   display: flex;
   align-items: center;
 `;
-
-const AvatarWrapper = styled.div`
-  margin-right: 8px;
+const DateWrapper = styled.span`
 `;
-
-export const caption = 'List of US Presidents';
 
 export const createHead = (withWidth: boolean) => {
   return {
@@ -44,48 +41,44 @@ export const createHead = (withWidth: boolean) => {
         key: 'participants',
         shouldTruncate: true,
         isSortable: false,
-        width: withWidth ? 100 : undefined,
+        width: withWidth ? 80 : undefined,
       },
       {
         key: 'description',
         isSortable: false,
         shouldTruncate: true,
-        width: withWidth ? 250 : undefined,
+        width: withWidth ? 240 : undefined,
       },
       {
         key: 'action_buttons',
         shouldTruncate: true,
-        width: withWidth ? 50 : undefined,
+        width: withWidth ? 55 : undefined,
       },
     ],
   };
 };
 
+var startHour = getHours(new Date(2012, 1, 29, 11, 45))
+var endHour = getHours(new Date(2012, 1, 29, 12, 45))
+var startMinute = getMinutes(new Date(2012, 1, 29, 11, 45))
+var endMinute = getMinutes(new Date(2012, 1, 29, 11, 45))
 export const head = createHead(true);
 
 export const rows = presidents.map((president, index) => ({
   key: `row-${index}-${president.nm}`,
   cells: [
     { // Date
-      key: president.id,
+      key: createKey(president.nm),
       content: (
-        <Wrapper>
-          <AvatarWrapper>
-            <Avatar
-              name={president.nm}
-              size="medium"
-              src={`https://api.adorable.io/avatars/24/${encodeURIComponent(
-                president.nm,
-              )}.png`}
-            />
-          </AvatarWrapper>
-          <a href="https://atlassian.design">{president.nm}</a>
-        </Wrapper>
+        <DateWrapper>
+          <p><b>{format(new Date(2020,9,2), 'MMM, d')}</b> </p>
+          {startHour}:{startMinute} - {endHour}:{endMinute}
+        </DateWrapper>
       ),
     },
     { // Name
       key: president.id,
-      content: president.pp,
+      content: createKey(president.pp),
     },
     { // Participants
       key: president.id,
