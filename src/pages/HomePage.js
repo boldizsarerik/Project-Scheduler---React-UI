@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Button, { ButtonGroup } from '@atlaskit/button';
 import Section from '../components/Section';
 import ContentWrapper from '../components/ContentWrapper';
-import Same_line from '../components/Same_line';
+import Same_line20 from '../components/Same_line20';
 import Datetime from '../components/Datetime';
 import Datetime2 from '../components/Datetime2';
 import Checkbox from '../components/Checkbox';
@@ -52,20 +52,16 @@ export default class HomePage extends Component
   {
     return (
 <ContentWrapper>
-        <Title></Title>
-        <Section/>
-        <ButtonGroup>
-          <Button appearance="primary" onClick={this.context.showModal} onClose={() => { }}>+ New Event</Button>
-          <Button onClick={this.context.addFlag}>Flag Button</Button>
-        </ButtonGroup>
-        <Section/>
-
-      <Same_line>
+      <Title></Title>
+      <Section/>
+      <Button appearance="primary" onClick={this.context.showModal} onClose={() => { }}>+ New Event</Button>
+      <Section/>
+      <Same_line20>
       <Datetime></Datetime>
       <Datetime2></Datetime2>
       <Checkbox></Checkbox>
       <Checkbox2></Checkbox2>
-      </Same_line>
+      </Same_line20>
       <Section/>
       <Table_style>
       <TABLE></TABLE>
