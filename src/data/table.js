@@ -1,5 +1,4 @@
 import React from 'react';
-import Avatar from '@atlaskit/avatar';
 import styled from 'styled-components';
 import presidents from './presidents.json';
 import lorem from './szoveg.json';

@@ -5,6 +5,7 @@ import { caption, head, rows } from '../data/table.js';
 
 const Wrapper = styled.div`
   min-width: 300px;
+  font-size: medium;
 `;
 
 export default class extends Component<{}, {}> {

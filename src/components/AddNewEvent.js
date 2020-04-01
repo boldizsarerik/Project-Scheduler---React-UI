@@ -1,5 +1,6 @@
 import Button from '@atlaskit/button';
 import TextField from '@atlaskit/textfield';
+import styled from 'styled-components';
 import TextArea from '@atlaskit/textarea';
 import { Checkbox } from '@atlaskit/checkbox';
 import React, { Fragment } from 'react';
@@ -26,13 +27,13 @@ const customStyles3: StylesConfig = {
   },
 };
 const flavors = [
-  { label: 'vanilla', value: 'vanilla' },
-  { label: 'strawberry', value: 'strawberry' },
-  { label: 'chocolate', value: 'chocolate' },
-  { label: 'mango', value: 'mango' },
-  { label: 'rum', value: 'rum' },
-  { label: 'hazelnut', value: 'hazelnut' },
-  { label: 'durian', value: 'durian' },
+  { label: 'Erik', value: 'vanilla' },
+  { label: 'Patrik', value: 'strawberry' },
+  { label: 'László', value: 'chocolate' },
+  { label: 'Arnold', value: 'mango' },
+  { label: 'Hunor', value: 'rum' },
+  { label: 'Norbert', value: 'hazelnut' },
+  { label: 'Márk', value: 'durian' },
 ];
 
 export default () => (
@@ -132,9 +133,7 @@ export default () => (
           </Field>
           <font color="#97a0b0">Begin typing to find users or press down to select a suggester user</font>
           <Section></Section>
-          <Field name="description" defaultValue="" label="Description">
-                  {({ fieldProps }) => <TextArea {...fieldProps} />}
-          </Field>
+
            </form>)}
     </Form>
   </div>

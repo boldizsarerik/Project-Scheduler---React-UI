@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import Button, { ButtonGroup } from '@atlaskit/button';
+import Button from '@atlaskit/button';
 import Section from '../components/Section';
 import ContentWrapper from '../components/ContentWrapper';
 import Same_line20 from '../components/Same_line20';

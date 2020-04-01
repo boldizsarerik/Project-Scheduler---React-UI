@@ -2,8 +2,8 @@ import React from 'react';
 import { mention } from '@atlaskit/util-data-test';
 import { Editor, EditorContext, CollapsedEditor } from '@atlaskit/editor-core';
 import { taskDecision } from '@atlaskit/util-data-test';
-import ToolsDrawer, { RenderEditorProps } from '../example-helpers/ToolsDrawer';
-import { storyMediaProviderFactory } from '@atlaskit/editor-test-helpers';
+import ToolsDrawer, { RenderEditorProps } from '../example-helpers/ToolsDrawer'; //Nemtudom hogy ezeknek a fájloknak hogyan kellene kinézniük.
+import { storyMediaProviderFactory } from '@atlaskit/editor-test-helpers'; 
 
 const SAVE_ACTION = () => console.log('Save');
 const CANCEL_ACTION = () => console.log('Cancel');
@@ -98,7 +98,8 @@ export default class EditorWithFeedback extends React.Component<Props, State> {
   private loadJquery = () => {
     const scriptElem = document.createElement('script');
     scriptElem.type = 'text/javascript';
-    scriptElem.src ='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js';
+    scriptElem.src =
+      'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js';
 
     scriptElem.onload = () => {
       this.setState({

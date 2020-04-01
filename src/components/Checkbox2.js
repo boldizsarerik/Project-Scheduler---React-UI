@@ -31,19 +31,6 @@ export default class ControlledExample extends PureComponent<void, State> {
           value="Not Recurring"
           name="controlled-checkbox"
         />
-
-        <div
-          style={{
-            borderStyle: 'dashed',
-            borderWidth: '1px',
-            borderColor: '#ccc',
-            padding: '0.5em',
-            margin: '0.5em',
-            color: '#ccc',
-          }}
-        >
-          {this.state.onChangeResult}
-        </div>
         </div>
     );
   }
