@@ -1,7 +1,4 @@
-import Button from '@atlaskit/button';
 import TextField from '@atlaskit/textfield';
-import styled from 'styled-components';
-import TextArea from '@atlaskit/textarea';
 import { Checkbox } from '@atlaskit/checkbox';
 import React, { Fragment } from 'react';
 import Form, { Field, FormFooter, ErrorMessage, Fieldset, CheckboxField } from '@atlaskit/form';
@@ -10,18 +7,19 @@ import { DatePicker, DateTimePicker, TimePicker } from '@atlaskit/datetime-picke
 import Same_line10 from './Same_line10';
 import Select, { StylesConfig } from '@atlaskit/select';
 import Section from '../components/Section';
+import TextEditor from '../components/TextEditor';
 
-const customStyles: StylesConfig = {
+const customStyles = {
   container(styles) {
     return { ...styles, width: '300%' };
   },
 };
-const customStyles2: StylesConfig = {
+const customStyles2= {
   container(styles) {
     return { ...styles, width: '42%' };
   },
 };
-const customStyles3: StylesConfig = {
+const customStyles3 = {
   container(styles) {
     return { ...styles, width: '70%' };
   },
@@ -115,7 +113,7 @@ export default () => (
                     />
                   )}
                 </Field>
-                <Field name="participants" label="Participants" defaultValue={[]}>
+                <Field name="participants" id='participants' label="Participants" defaultValue={[]}>
             {({ fieldProps: { id, ...rest }, error }) => (
               <Fragment>
                 <Select
@@ -133,7 +131,11 @@ export default () => (
           </Field>
           <font color="#97a0b0">Begin typing to find users or press down to select a suggester user</font>
           <Section></Section>
-
+          <Field name="description" id="description" label="Description">
+          {({ fieldProps: { id, ...rest }, error }) => (
+          <TextEditor></TextEditor>
+          )}
+          </Field>
            </form>)}
     </Form>
   </div>

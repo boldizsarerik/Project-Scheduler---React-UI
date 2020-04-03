@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import Modal from '@atlaskit/modal-dialog';
+import Modal, {ModalFooter} from '@atlaskit/modal-dialog';
 import Page from '@atlaskit/page';
 import '@atlaskit/css-reset';
 import AddNewEvent from '../components/AddNewEvent';
@@ -36,6 +36,8 @@ export default class App extends Component {
     this.setState({ isModalOpen: false });
   }
 
+  create = ({ target }) => console.log(target.innerText);
+
   render() {
     return (
       <div>
@@ -48,9 +50,9 @@ export default class App extends Component {
             this.state.isModalOpen && (
               
               <Modal
-                actions={[{ text: 'Cancel', onClick: this.hideModal }]}
+                actions={[{ text: 'Create', onClick: this.create },{ text: 'Cancel', onClick: this.hideModal }]}
                 onClose={this.hideModal}
-                height="800px"
+                height="750px"
                 width="large"
               >
                 <MYDIV>

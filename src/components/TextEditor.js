@@ -1,113 +1,73 @@
 import React from 'react';
-import { mention } from '@atlaskit/util-data-test';
-import { Editor, EditorContext, CollapsedEditor } from '@atlaskit/editor-core';
-import { taskDecision } from '@atlaskit/util-data-test';
-import ToolsDrawer, { RenderEditorProps } from '../example-helpers/ToolsDrawer'; //Nemtudom hogy ezeknek a fájloknak hogyan kellene kinézniük.
-import { storyMediaProviderFactory } from '@atlaskit/editor-test-helpers'; 
+import styled from 'styled-components';
+import { Editor, EditorContext, WithEditorActions } from '@atlaskit/editor-core';
+import { mention, taskDecision } from '@atlaskit/util-data-test';
+import { WikiMarkupTransformer } from '@atlaskit/editor-wikimarkup-transformer';
 
-const SAVE_ACTION = () => console.log('Save');
-const CANCEL_ACTION = () => console.log('Cancel');
-const EXPAND_ACTION = () => console.log('Expand');
+const Container = styled.div`
+`;
 
-const analyticsHandler = (actionName: string, props: any) =>
-  console.log(actionName, props);
-
-const mediaProvider = storyMediaProviderFactory({
-  useMediaPickerAuthProvider: true,
-  includeUploadMediaClientConfig: true,
-  includeUserAuthProvider: true,
-  collectionName: 'test',
-});
-
-export type Props = {};
-export type State = {
-  hasJquery?: boolean;
-  isExpanded?: boolean;
-};
-
-export default class EditorWithFeedback extends React.Component<Props, State> {
-  state = {
-    hasJquery: false,
-    isExpanded: false,
-  };
+class TransformerPanels extends React.PureComponent {
+  state = { source: '', output: '' };
 
   componentDidMount() {
-    delete window.jQuery;
-    this.loadJquery();
+    window.setTimeout(() => {
+      this.props.actions.replaceDocument(this.state.source);
+    });
   }
 
-  onFocus = () =>
-    this.setState(prevState => ({ isExpanded: !prevState.isExpanded }));
+  handleUpdateToSource = (e) => {
+    const value = e.currentTarget.innerText;
+    this.setState({ source: value }, () =>
+      this.props.actions.replaceDocument(value),
+    );
+  };
+
+  handleChangeInTheEditor = async () => {
+    const value = await this.props.actions.getValue();
+    this.setState({ output: value });
+  };
 
   render() {
-    if (!this.state.hasJquery) {
-      return <h3>Please wait, loading jQuery ...</h3>;
-    }
-
     return (
-      <EditorContext>
-        <div>
-          <ToolsDrawer
-            renderEditor={({ onChange, disabled }: RenderEditorProps) => (
-              <div style={{ padding: '20px' }}>
-                <CollapsedEditor
-                  placeholder="What do you want to say?"
-                  isExpanded={this.state.isExpanded}
-                  onFocus={this.onFocus}
-                  onExpand={EXPAND_ACTION}
-                >
-                  <Editor
-                    appearance="comment"
-                    placeholder="What do you want to say?"
-                    analyticsHandler={analyticsHandler}
-                    shouldFocus={true}
-                    allowTextColor={true}
-                    allowRule={true}
-                    allowTables={{
-                      allowColumnResizing: true,
-                      allowMergeCells: true,
-                      allowNumberColumn: true,
-                      allowBackgroundColor: true,
-                      allowHeaderRow: true,
-                      allowHeaderColumn: true,
-                      permittedLayouts: 'all',
-                      stickToolbarToBottom: true,
-                    }}
-                    allowDate={true}
-                    media={{ provider: mediaProvider, allowMediaSingle: true }}
-                    disabled={disabled}
-                    mentionProvider={Promise.resolve(
-                      mention.storyData.resourceProvider,
-                    )}
-                    taskDecisionProvider={Promise.resolve(
-                      taskDecision.getMockTaskDecisionResource(),
-                    )}
-                    onChange={onChange}
-                    onSave={SAVE_ACTION}
-                    onCancel={CANCEL_ACTION}
-                  />
-                </CollapsedEditor>
-              </div>
+      <Container>
+        <div id="editor">
+          <Editor
+            appearance="comment"
+            allowTextColor={true}
+            allowRule={true}
+            allowTables={{
+              allowColumnResizing: true,
+              allowMergeCells: true,
+              allowNumberColumn: true,
+              allowBackgroundColor: true,
+              allowHeaderRow: true,
+              allowHeaderColumn: true,
+              permittedLayouts: 'all',
+              stickToolbarToBottom: true,
+            }}
+            contentTransformerProvider={schema =>
+              new WikiMarkupTransformer(schema)
+            }
+            allowDate={true}
+            mentionProvider={Promise.resolve(
+              mention.storyData.resourceProvider,
             )}
+            taskDecisionProvider={Promise.resolve(
+              taskDecision.getMockTaskDecisionResource(),
+            )}
+            onChange={this.handleChangeInTheEditor}
           />
         </div>
-      </EditorContext>
+      </Container>
     );
   }
-
-  private loadJquery = () => {
-    const scriptElem = document.createElement('script');
-    scriptElem.type = 'text/javascript';
-    scriptElem.src =
-      'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js';
-
-    scriptElem.onload = () => {
-      this.setState({
-        ...this.state,
-        hasJquery: true,
-      });
-    };
-
-    document.body.appendChild(scriptElem);
-  };
 }
+
+export default () => (
+  <EditorContext>
+    <WithEditorActions
+      render={actions => <TransformerPanels actions={actions} />}
+    />
+  </EditorContext>
+);
