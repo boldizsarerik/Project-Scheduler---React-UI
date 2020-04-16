@@ -6,6 +6,7 @@ import '@atlaskit/css-reset';
 import AddNewEvent from '../components/AddNewEvent';
 import styled from 'styled-components';
 import { gridSize } from '@atlaskit/theme';
+import HomePage from '../pages/HomePage';
 
 const MYDIV= styled.div`
   padding-top: ${gridSize() * 2}px;
@@ -42,7 +43,7 @@ export default class App extends Component {
     return (
       <div>
         <Page>
-          {this.props.children}
+          <HomePage></HomePage>
         </Page>
         
         <div>
