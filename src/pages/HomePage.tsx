@@ -1,16 +1,16 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import ContentWrapper from '../components/ContentWrapper';
+import Title from '../components/Title';
 import Button from '@atlaskit/button';
 import Section from '../components/Section';
-import ContentWrapper from '../components/ContentWrapper';
-import Same_line20 from '../components/Same_line20';
 import Datetime from '../components/Datetime';
 import Datetime2 from '../components/Datetime2';
+import Same_line20 from '../components/Same_line20';
 import Checkbox from '../components/Checkbox';
 import Checkbox2 from '../components/Checkbox2';
-import Title from '../components/Title';
-import TABLE from '../components/TABLE';
 import styled from 'styled-components';
+import Table from '../components/Table';
 
 const Table_style = styled.div`
   min-width: 300px;
@@ -42,7 +42,6 @@ export default class HomePage extends Component
 {
   static contextTypes = {
     showModal: PropTypes.func,
-    addFlag: PropTypes.func,
     onConfirm: PropTypes.func,
     onCancel: PropTypes.func,
     onClose: PropTypes.func,
@@ -53,21 +52,19 @@ export default class HomePage extends Component
     return (
 <ContentWrapper>
       <Title></Title>
-      <Section/>
-      <Button appearance="primary" onClick={this.context.showModal} onClose={() => { }}>+ New Event</Button>
-      <Section/>
+      <Section></Section>
+      <Button appearance="primary" onClick={this.context.showModal}>+ New Event</Button>
+      <Section></Section>
       <Same_line20>
       <Datetime></Datetime>
       <Datetime2></Datetime2>
       <Checkbox></Checkbox>
       <Checkbox2></Checkbox2>
       </Same_line20>
-      <Section/>
+      <Section></Section>
       <Table_style>
-      <TABLE></TABLE>
+        <Table></Table>
       </Table_style>
-      
-
 </ContentWrapper>
     );
   }

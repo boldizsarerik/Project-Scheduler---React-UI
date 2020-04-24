@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default ({ children }) => (
+export default () => (
   <section style={
     {marginBottom: '30px'}}>
-    { children }
+  
   </section>
 );

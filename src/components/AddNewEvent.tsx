@@ -1,12 +1,12 @@
 import TextField from '@atlaskit/textfield';
 import { Checkbox } from '@atlaskit/checkbox';
 import React, { Fragment } from 'react';
-import Form, { Field, FormFooter, ErrorMessage, Fieldset, CheckboxField } from '@atlaskit/form';
+import Form, { Field, ErrorMessage, CheckboxField } from '@atlaskit/form';
 import { gridSize } from '@atlaskit/theme';
-import { DatePicker, DateTimePicker, TimePicker } from '@atlaskit/datetime-picker';
+import { DatePicker, TimePicker } from '@atlaskit/datetime-picker';
 import Same_line10 from './Same_line10';
-import Select, { StylesConfig } from '@atlaskit/select';
-import Section from '../components/Section';
+import Select from '@atlaskit/select';
+import Section from './Section';
 import TextEditor from '../components/TextEditor';
 
 const customStyles = {
@@ -25,14 +25,20 @@ const customStyles3 = {
   },
 };
 const flavors = [
-  { label: 'Erik', value: 'vanilla' },
-  { label: 'Patrik', value: 'strawberry' },
-  { label: 'László', value: 'chocolate' },
-  { label: 'Arnold', value: 'mango' },
-  { label: 'Hunor', value: 'rum' },
-  { label: 'Norbert', value: 'hazelnut' },
-  { label: 'Márk', value: 'durian' },
+  { label: 'Erik', value: '1' },
+  { label: 'Patrik', value: '2' },
+  { label: 'László', value: '3' },
+  { label: 'Arnold', value: '4' },
+  { label: 'Hunor', value: '5' },
+  { label: 'Norbert', value: '6' },
+  { label: 'Márk', value: '7' },
 ];
+
+const text= {
+  color: "#97a0b0",
+  margin: 0,
+  padding: 0,
+}
 
 export default () => (
   <div
@@ -81,22 +87,23 @@ export default () => (
            </div>
            <Field name="repeat" id="repeat" label="">
                   {({ fieldProps: { id, ...rest } }) => (
-                    <Select
-                      id={`${id}-select`}
-                      options={[
-                        { label: 'Does not repeat', value: '1' },
-                        { label: 'Every Day', value: '2' },
-                        { label: 'Every Week', value: '3' },
-                      ]}
-                      placeholder="Choose&hellip;"
-                      styles={customStyles}
-                      {...rest}
-                    />
+                     <Select
+                     id={`${id}-select`}
+                     className="single-select"
+                     classNamePrefix="react-select"
+                     options={[
+                      { label: 'Does not repeat', value: '1' },
+                      { label: 'Every Day', value: '2' },
+                      { label: 'Every Week', value: '3' },
+                     ]}
+                     placeholder="Choose&hellip;"
+                     styles={customStyles}
+                   />
                   )}
                 </Field>
                 </Same_line10>
                 <hr></hr>
-           <Field name="project" id="project" label="Project" isRequired>
+                <Field name="project" id="project" label="Project" isRequired>
                   {({ fieldProps: { id, ...rest } }) => (
                     <Select
                       id={`${id}-select`}
@@ -109,7 +116,6 @@ export default () => (
                       ]}
                       placeholder="Choose a project&hellip;"
                       styles={customStyles2}
-                      {...rest}
                     />
                   )}
                 </Field>
@@ -121,7 +127,6 @@ export default () => (
                   inputId={id}
                   placeholder="Select participants&hellip;"
                   styles={customStyles3}
-                  {...rest}
                   options={flavors}
                   isMulti
                 />
@@ -129,7 +134,7 @@ export default () => (
               </Fragment>
             )}
           </Field>
-          <font color="#97a0b0">Begin typing to find users or press down to select a suggester user</font>
+          <p style={text}>Begin typing to find users or press down to select a suggester user</p>
           <Section></Section>
           <Field name="description" id="description" label="Description">
           {({ fieldProps: { id, ...rest }, error }) => (

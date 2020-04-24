@@ -1,18 +1,36 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import Modal, {ModalFooter} from '@atlaskit/modal-dialog';
-import Page from '@atlaskit/page';
-import '@atlaskit/css-reset';
-import AddNewEvent from '../components/AddNewEvent';
-import styled from 'styled-components';
+import Modal from '@atlaskit/modal-dialog';
 import { gridSize } from '@atlaskit/theme';
-import HomePage from '../pages/HomePage';
+import HomePage from './pages/HomePage';
+import styled from 'styled-components';
+import '@atlaskit/css-reset';
+import AddNewEvent from './components/AddNewEvent';
+import { AtlassianConnect } from "./types/jira-cloud-api";
+
+declare const AP: AtlassianConnect;
+
+function getApObject() {
+
+  AP.request('/rest/api/2/user/bulk?accountId=5bffb0cfa1b46046f530c813', {
+  success: function(responseText){
+  var json = (JSON.parse(responseText));
+  var avatarUrl = json.values[0].avatarUrls["48x48"];
+  console.log(avatarUrl);
+  }
+});
+}
 
 const MYDIV= styled.div`
   padding-top: ${gridSize() * 2}px;
   margin-right: 20px;
   margin-left: 20px;
 `;
+
+const title= {
+  fontSize: 18,
+  color: "#717a8a",
+}
 
 export default class App extends Component {
   state = {
@@ -42,14 +60,14 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Page>
+        <div className="App">
+        <h1>AVATAR URL</h1>
+        <button onClick={getApObject}>Log Avatar Url</button>
+    </div>
           <HomePage></HomePage>
-        </Page>
-        
         <div>
           {
             this.state.isModalOpen && (
-              
               <Modal
                 actions={[{ text: 'Create', onClick: this.create },{ text: 'Cancel', onClick: this.hideModal }]}
                 onClose={this.hideModal}
@@ -57,14 +75,13 @@ export default class App extends Component {
                 width="large"
               >
                 <MYDIV>
-                <font size="4" color="#717a8a">Create Event</font>
-                 <AddNewEvent></AddNewEvent>
+                <p style={title}>Create Event</p>
+                <AddNewEvent></AddNewEvent>
                  </MYDIV>
               </Modal>
             )
           }
         </div>
-     
       </div>
     );
   }

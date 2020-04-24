@@ -1,14 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Editor, EditorContext, WithEditorActions } from '@atlaskit/editor-core';
+import {
+  Editor,
+  EditorContext,
+  WithEditorActions,
+} from '@atlaskit/editor-core';
 import { mention, taskDecision } from '@atlaskit/util-data-test';
 import { WikiMarkupTransformer } from '@atlaskit/editor-wikimarkup-transformer';
 
 const Container = styled.div`
 `;
 
-class TransformerPanels extends React.PureComponent {
-  state = { source: '', output: '' };
+type Props = { actions: any };
+type State = { source: string; output: string };
+class TransformerPanels extends React.PureComponent<Props, State> {
+  state: State = { source: '', output: '' };
 
   componentDidMount() {
     window.setTimeout(() => {
@@ -16,7 +22,7 @@ class TransformerPanels extends React.PureComponent {
     });
   }
 
-  handleUpdateToSource = (e) => {
+  handleUpdateToSource = (e: React.FormEvent<HTMLDivElement>) => {
     const value = e.currentTarget.innerText;
     this.setState({ source: value }, () =>
       this.props.actions.replaceDocument(value),

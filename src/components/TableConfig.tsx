@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import presidents from './presidents.json';
-import lorem from './szoveg.json';
-import Button, { ButtonGroup } from '@atlaskit/button';
-import Avatars from '../components/Avatars';
-import AddIcon from '@atlaskit/icon/glyph/editor/add';
+import presidents from '../components/presidents.json';
+import lorem from '../components/lorem.json';
 import { format,getHours,getMinutes  } from 'date-fns'
+import Button, { ButtonGroup } from '@atlaskit/button';
+import AddIcon from '@atlaskit/icon/glyph/editor/add';
+import Avatars from '../components/Avatars';
 
 function createKey(input) {
   return input ? input.replace(/^(the|a|an)/, '').replace(/\s/g, '') : input;
@@ -51,7 +51,7 @@ export const createHead = (withWidth: boolean) => {
       {
         key: 'action_buttons',
         shouldTruncate: true,
-        width: withWidth ? 55 : undefined,
+        width: withWidth ? 70 : undefined,
       },
     ],
   };
@@ -82,7 +82,7 @@ export const rows = presidents.map((president, index) => ({
     { // Participants
       key: president.id,
       content: <Wrapper>
-          <Avatars></Avatars> 
+          <Avatars nev="Teszt"></Avatars>
           <Button appearance="subtle" iconBefore={<AddIcon label="add"/>}></Button>
       </Wrapper>
     },

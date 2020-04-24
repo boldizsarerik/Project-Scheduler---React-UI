@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import DynamicTable from '@atlaskit/dynamic-table';
-import { caption, head, rows } from '../data/table.js';
+import { head, rows } from '../components/TableConfig';
 
 const Wrapper = styled.div`
-  min-width: 300px;
-  font-size: medium;
+min-width: 300px;
+font-size: medium;
 `;
 
 export default class extends Component<{}, {}> {
@@ -17,10 +17,12 @@ export default class extends Component<{}, {}> {
           rows={rows}
           rowsPerPage={10}
           defaultPage={1}
+          loadingSpinnerSize="large"
+          isLoading={false}
           isFixedSize
+          highlightedRowIndex={2}
           defaultSortKey="term"
           defaultSortOrder="ASC"
-          highlightedRowIndex={2}
           onSort={() => console.log('onSort')}
           onSetPage={() => console.log('onSetPage')}
         />
