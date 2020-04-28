@@ -24,6 +24,3 @@ export const RANDOM_USERS = [
 export function getAdorableAvatar(id: string, size: number = 80) {
   return `https://api.adorable.io/avatars/${size}/${id}.png`;
 }
-
-export const avatarUrl: string =
-  'https://secure.gravatar.com/avatar/c92fd31f974cc70d28d6b4c30f5e6416?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPA-1.png&size=48&s=48';

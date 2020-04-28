@@ -6,20 +6,6 @@ import HomePage from './pages/HomePage';
 import styled from 'styled-components';
 import '@atlaskit/css-reset';
 import AddNewEvent from './components/AddNewEvent';
-import { AtlassianConnect } from "./types/jira-cloud-api";
-
-declare const AP: AtlassianConnect;
-
-function getApObject() {
-
-  AP.request('/rest/api/2/user/bulk?accountId=5bffb0cfa1b46046f530c813', {
-  success: function(responseText){
-  var json = (JSON.parse(responseText));
-  var avatarUrl = json.values[0].avatarUrls["48x48"];
-  console.log(avatarUrl);
-  }
-});
-}
 
 const MYDIV= styled.div`
   padding-top: ${gridSize() * 2}px;
@@ -61,8 +47,6 @@ export default class App extends Component {
     return (
       <div>
         <div className="App">
-        <h1>AVATAR URL</h1>
-        <button onClick={getApObject}>Log Avatar Url</button>
     </div>
           <HomePage></HomePage>
         <div>

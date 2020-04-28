@@ -28,8 +28,7 @@ export interface IRequestException {
   xhr: XMLHttpRequest;
 }
 export interface IRequestOptions {
-  [x: string]: any;
-  url?: string;
+  url?: string; // ez került még bele
   type?: string;
   cache?: boolean;
   data?: any;

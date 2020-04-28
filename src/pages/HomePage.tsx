@@ -11,6 +11,7 @@ import Checkbox from '../components/Checkbox';
 import Checkbox2 from '../components/Checkbox2';
 import styled from 'styled-components';
 import Table from '../components/Table';
+import Backend from '../components/Backend';
 
 const Table_style = styled.div`
   min-width: 300px;
@@ -63,7 +64,7 @@ export default class HomePage extends Component
       </Same_line20>
       <Section></Section>
       <Table_style>
-        <Table></Table>
+      <Table></Table>
       </Table_style>
 </ContentWrapper>
     );
