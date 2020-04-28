@@ -11,7 +11,6 @@ import Checkbox from '../components/Checkbox';
 import Checkbox2 from '../components/Checkbox2';
 import styled from 'styled-components';
 import Table from '../components/Table';
-import Backend from '../components/Backend';
 
 const Table_style = styled.div`
   min-width: 300px;
@@ -39,8 +38,7 @@ const Table_style = styled.div`
   }
 `;
 
-export default class HomePage extends Component 
-{
+export default class HomePage extends Component {
   static contextTypes = {
     showModal: PropTypes.func,
     onConfirm: PropTypes.func,
@@ -48,25 +46,24 @@ export default class HomePage extends Component
     onClose: PropTypes.func,
   };
 
-  render() 
-  {
+  render() {
     return (
-<ContentWrapper>
-      <Title></Title>
-      <Section></Section>
-      <Button appearance="primary" onClick={this.context.showModal}>+ New Event</Button>
-      <Section></Section>
-      <Same_line20>
-      <Datetime></Datetime>
-      <Datetime2></Datetime2>
-      <Checkbox></Checkbox>
-      <Checkbox2></Checkbox2>
-      </Same_line20>
-      <Section></Section>
-      <Table_style>
-      <Table></Table>
-      </Table_style>
-</ContentWrapper>
+      <ContentWrapper>
+        <Title></Title>
+        <Section></Section>
+        <Button appearance="primary" onClick={this.context.showModal}>+ New Event</Button>
+        <Section></Section>
+        <Same_line20>
+          <Datetime></Datetime>
+          <Datetime2></Datetime2>
+          <Checkbox></Checkbox>
+          <Checkbox2></Checkbox2>
+        </Same_line20>
+        <Section></Section>
+        <Table_style>
+          <Table></Table>
+        </Table_style>
+      </ContentWrapper>
     );
   }
 }

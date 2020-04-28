@@ -14,7 +14,7 @@ const customStyles = {
     return { ...styles, width: '300%' };
   },
 };
-const customStyles2= {
+const customStyles2 = {
   container(styles) {
     return { ...styles, width: '42%' };
   },
@@ -34,7 +34,7 @@ const flavors = [
   { label: 'Márk', value: '7' },
 ];
 
-const text= {
+const text = {
   color: "#97a0b0",
   margin: 0,
   padding: 0,
@@ -54,72 +54,72 @@ export default () => (
             {({ fieldProps }) => <TextField width="large" {...fieldProps} />}
           </Field>
           <Same_line10>
-          <Field name="eventdate1" label="Event Date" defaultValue="" isRequired>
-          {({ fieldProps }) => <DatePicker {...fieldProps} innerProps={{ style: { width: gridSize() * 14 } }} />}
-          </Field> 
-          <div style={
-      {marginTop: '21.5px'}}>
-          <Field name="time" label="" defaultValue="" isRequired>
-          {({ fieldProps }) => <TimePicker {...fieldProps} innerProps={{ style: { width: gridSize() * 9 } }} />}
-          </Field>
-          </div>
-          <div style={
-      {marginTop: '38px'}}> to </div>
-          <div style={
-      {marginTop: '21.5px'}}>
-          <Field name="time2" label="" defaultValue="" isRequired>
-          {({ fieldProps }) => <TimePicker {...fieldProps} innerProps={{ style: { width: gridSize() * 9 } }} />}
-          </Field> 
-          </div>
-          <div style={
-      {marginTop: '21.5px'}}>
-          <Field name="eventdate2" label="" defaultValue="" isRequired>
-          {({ fieldProps }) => <DatePicker {...fieldProps} innerProps={{ style: { width: gridSize() * 14 } }} />}
-          </Field>  
-          </div>
+            <Field name="eventdate1" label="Event Date" defaultValue="" isRequired>
+              {({ fieldProps }) => <DatePicker {...fieldProps} innerProps={{ style: { width: gridSize() * 14 } }} />}
+            </Field>
+            <div style={
+              { marginTop: '21.5px' }}>
+              <Field name="time" label="" defaultValue="" isRequired>
+                {({ fieldProps }) => <TimePicker {...fieldProps} innerProps={{ style: { width: gridSize() * 9 } }} />}
+              </Field>
+            </div>
+            <div style={
+              { marginTop: '38px' }}> to </div>
+            <div style={
+              { marginTop: '21.5px' }}>
+              <Field name="time2" label="" defaultValue="" isRequired>
+                {({ fieldProps }) => <TimePicker {...fieldProps} innerProps={{ style: { width: gridSize() * 9 } }} />}
+              </Field>
+            </div>
+            <div style={
+              { marginTop: '21.5px' }}>
+              <Field name="eventdate2" label="" defaultValue="" isRequired>
+                {({ fieldProps }) => <DatePicker {...fieldProps} innerProps={{ style: { width: gridSize() * 14 } }} />}
+              </Field>
+            </div>
           </Same_line10>
           <Same_line10>
-          <div style={
-      {marginTop: '6px'}}>
-          <CheckboxField name="allday" value="allday">
-             {({ fieldProps }) => <Checkbox {...fieldProps} label="All day" />}
-           </CheckboxField>
-           </div>
-           <Field name="repeat" id="repeat" label="">
-                  {({ fieldProps: { id, ...rest } }) => (
-                     <Select
-                     id={`${id}-select`}
-                     className="single-select"
-                     classNamePrefix="react-select"
-                     options={[
-                      { label: 'Does not repeat', value: '1' },
-                      { label: 'Every Day', value: '2' },
-                      { label: 'Every Week', value: '3' },
-                     ]}
-                     placeholder="Choose&hellip;"
-                     styles={customStyles}
-                   />
-                  )}
-                </Field>
-                </Same_line10>
-                <hr></hr>
-                <Field name="project" id="project" label="Project" isRequired>
-                  {({ fieldProps: { id, ...rest } }) => (
-                    <Select
-                      id={`${id}-select`}
-                      options={[
-                        { label: 'Project1', value: '1' },
-                        { label: 'Project2', value: '2' },
-                        { label: 'Project3', value: '3' },
-                        { label: 'Project4', value: '4' },
-                        { label: 'Project5', value: '5' },
-                      ]}
-                      placeholder="Choose a project&hellip;"
-                      styles={customStyles2}
-                    />
-                  )}
-                </Field>
-                <Field name="participants" id='participants' label="Participants" defaultValue={[]}>
+            <div style={
+              { marginTop: '6px' }}>
+              <CheckboxField name="allday" value="allday">
+                {({ fieldProps }) => <Checkbox {...fieldProps} label="All day" />}
+              </CheckboxField>
+            </div>
+            <Field name="repeat" id="repeat" label="">
+              {({ fieldProps: { id, ...rest } }) => (
+                <Select
+                  id={`${id}-select`}
+                  className="single-select"
+                  classNamePrefix="react-select"
+                  options={[
+                    { label: 'Does not repeat', value: '1' },
+                    { label: 'Every Day', value: '2' },
+                    { label: 'Every Week', value: '3' },
+                  ]}
+                  placeholder="Choose&hellip;"
+                  styles={customStyles}
+                />
+              )}
+            </Field>
+          </Same_line10>
+          <hr></hr>
+          <Field name="project" id="project" label="Project" isRequired>
+            {({ fieldProps: { id, ...rest } }) => (
+              <Select
+                id={`${id}-select`}
+                options={[
+                  { label: 'Project1', value: '1' },
+                  { label: 'Project2', value: '2' },
+                  { label: 'Project3', value: '3' },
+                  { label: 'Project4', value: '4' },
+                  { label: 'Project5', value: '5' },
+                ]}
+                placeholder="Choose a project&hellip;"
+                styles={customStyles2}
+              />
+            )}
+          </Field>
+          <Field name="participants" id='participants' label="Participants" defaultValue={[]}>
             {({ fieldProps: { id, ...rest }, error }) => (
               <Fragment>
                 <Select
@@ -137,11 +137,11 @@ export default () => (
           <p style={text}>Begin typing to find users or press down to select a suggester user</p>
           <Section></Section>
           <Field name="description" id="description" label="Description">
-          {({ fieldProps: { id, ...rest }, error }) => (
-          <TextEditor></TextEditor>
-          )}
+            {({ fieldProps: { id, ...rest }, error }) => (
+              <TextEditor></TextEditor>
+            )}
           </Field>
-           </form>)}
+        </form>)}
     </Form>
   </div>
 );

@@ -1,10 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-  Editor,
-  EditorContext,
-  WithEditorActions,
-} from '@atlaskit/editor-core';
+import { Editor, EditorContext, WithEditorActions } from '@atlaskit/editor-core';
 import { mention, taskDecision } from '@atlaskit/util-data-test';
 import { WikiMarkupTransformer } from '@atlaskit/editor-wikimarkup-transformer';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { gridSize } from '@atlaskit/theme';
-import { DatePicker} from '@atlaskit/datetime-picker';
+import { DatePicker } from '@atlaskit/datetime-picker';
 
 export default () => {
   return (

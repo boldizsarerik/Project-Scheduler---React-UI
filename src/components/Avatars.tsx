@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { AppearanceType, SizeType } from '@atlaskit/avatar';
 import AvatarGroup from '@atlaskit/avatar-group';
-import { RANDOM_USERS, getAdorableAvatar} from '../components/av';
+import { RANDOM_USERS } from '../components/av';
 import { AtlassianConnect } from "../types/jira-cloud-api";
-import axios from 'axios';
 
 declare const AP: AtlassianConnect;
 

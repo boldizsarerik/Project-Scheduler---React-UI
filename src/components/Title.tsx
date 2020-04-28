@@ -3,7 +3,7 @@ import { BreadcrumbsStateless, BreadcrumbsItem } from '@atlaskit/breadcrumbs';
 import PageHeader from '@atlaskit/page-header';
 
 const breadcrumbs = (
-  <BreadcrumbsStateless onExpand={() => {}}>
+  <BreadcrumbsStateless onExpand={() => { }}>
     <BreadcrumbsItem text="Projects" key="Projects" />
     <BreadcrumbsItem text="Demo" key="Demo" />
     <BreadcrumbsItem text="Scheduler" key="Scheduler" />

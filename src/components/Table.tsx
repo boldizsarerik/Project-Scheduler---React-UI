@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import DynamicTable from '@atlaskit/dynamic-table';
-import { format,getHours,getMinutes  } from 'date-fns'
 import Button, { ButtonGroup } from '@atlaskit/button';
 import AddIcon from '@atlaskit/icon/glyph/editor/add';
 import Avatars from '../components/Avatars';
@@ -44,12 +43,7 @@ export default class EventsTable extends React.Component<IProps, IState> {
       })
   }
 
-//startHour = getHours(new Date(2012, 1, 29, 11, 45))
-//endHour = getHours(new Date(2012, 1, 29, 15, 45))
-//startMinute = getMinutes(new Date(2012, 1, 29, 11, 45))
-//endMinute = getMinutes(new Date(2012, 1, 29, 15, 45))
-
-createHead = (withWidth: boolean) => {
+  createHead = (withWidth: boolean) => {
     return {
       cells: [
         {
@@ -85,47 +79,44 @@ createHead = (withWidth: boolean) => {
   };
 
   render() {
-  const rows = this.state.events.map(event => ({
-    cells: [
-      { // Date
-      //  key: this.createKey(president.nm), <p><b>{format(new Date(2020,9,2), 'MMM, d')}</b> </p>
-      key: event.name,
-        content: (
-          <DateWrapper>
-            
-            <p><b>{event.date_start}</b> </p>
-            {event.time_start} - {event.time_end}
-          </DateWrapper>
-        ),
-      },
-      { // Name
-       key: event.name,
-       content: event.name
-      },
-      { // Participants
-     //   key: president.id,
-     key: event.name,
-        content: <Wrapper>
-            <Avatars avatar={event.participant_ids+""}></Avatars>
-            <Button appearance="subtle" iconBefore={<AddIcon label="add"/>}></Button>
-        </Wrapper>
-        
-      },
-      { // Description
-        key: event.name,
-        content: event.description,
-      },
-      { // Edit, delete button
-        key: event.name,
-        content: (
-          <ButtonGroup>
+    const rows = this.state.events.map(event => ({
+      cells: [
+        { // Date
+          key: event.name,
+          content: (
+            <DateWrapper>
+              <p><b>{event.date_start}</b> </p>
+              {event.time_start} - {event.time_end}
+            </DateWrapper>
+          ),
+        },
+        { // Name
+          key: event.name,
+          content: event.name
+        },
+        { // Participants
+          key: event.name,
+          content: <Wrapper>
+            <Avatars avatar={event.participant_ids + ""}></Avatars>
+            <Button appearance="subtle" iconBefore={<AddIcon label="add" />}></Button>
+          </Wrapper>
+
+        },
+        { // Description
+          key: event.name,
+          content: event.description,
+        },
+        { // Edit, delete button
+          key: event.name,
+          content: (
+            <ButtonGroup>
               <Button> Edit </Button>
               <Button> Delete </Button>
-          </ButtonGroup>
-        ),
-      },
-    ],
-  }));
+            </ButtonGroup>
+          ),
+        },
+      ],
+    }));
     return (
       <Wrapper2>
         <DynamicTable

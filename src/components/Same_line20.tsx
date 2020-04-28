@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   }
 `;
 
-export default ({children}) => (
+export default ({ children }) => (
   <Wrapper>{children}</Wrapper>
 )
 
